@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="author" content="harrnish">
+
+      <title>Brooks Portfolio Website</title>
+
+      <!-- stylesheet -->
+      <link rel="stylesheet" href="style.css">
+
+      <!-- bootstrap cdns -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+      <!-- google fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+
+      <!-- ionicons cdn -->
+      <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+
+
+      <!-- for on scroll animations -->
+      <link rel="stylesheet" href="animate.css">
+      <script src="wow.min.js"></script>
+
+</head>
+<body>
+    
+      <div class="wrapper">
+
+            <!--------------- navbar starts here --------------->
+            <nav>
+                  <span id="brand">
+                        <a href="index.html">Brooks</a>
+                  </span>
+
+                  <ul id="menu">
+                        <li><a href="index.html">home<span>.</span></a></li>
+                        <li><a href="project.html">projects<span>.</span></a></li>
+                        <li><a href="about.html">about me<span>.</span></a></li>
+                        <li><a href="contact.html">contact<span>.</span></a></li>
+                  </ul>
+
+                  <div id="toggle">
+                        <div class="span">menu</div>
+                  </div>
+
+            </nav>
+
+            <div id="resize">
+                  <div class="close-btn">close</div>
+
+                  <ul id="menu">
+                        <li><a href="index.html">home<span>.</span></a></li>
+                        <li><a href="project.html">projects<span>.</span></a></li>
+                        <li><a href="about.html">about me<span>.</span></a></li>
+                        <li><a href="contact.html">contact<span>.</span></a></li>
+                  </ul>
+            </div>
+
+            <!--------------- navbar ends here --------------->
+
+            <div class="whitespace"></div>
+
+            <!--------------- hero section starts here --------------->
+            <div class="container">
+                 
+                  <div class="hero-content">
+                        <br><br>
+                        <div class="row">
+                              <div class="col-lg-12">
+                                    <br>
+
+                                    <h2 class="wow fadeInUp" data-wow-delay="1s">Project 1: Datastructure and Algorithm Simulator</h2><br><br>
+                                       
+     
+                                    <div class="row">
+                                          <div class="col-lg-4">
+                                                <p class="wow fadeInUp" data-wow-delay="1.2s">Type :</p>
+                                                <h6 class="wow fadeInUp" data-wow-delay="1.3s">Desktop Application</h6>
+                                          </div>
+
+                                          <div class="col-lg-4">
+                                                <p class="wow fadeInUp" data-wow-delay="1.4s">started :</p>
+                                                <h6 class="wow fadeInUp" data-wow-delay="1.5s">1 April 2019</h6>
+                                          </div>
+
+                                          <div class="col-lg-4">
+                                                <p class="wow fadeInUp" data-wow-delay="1.6s">completed :</p>
+                                                <h6 class="wow fadeInUp" data-wow-delay="1.7s">1 August 2019</h6>
+                                          </div>
+                                    </div>
+                                    <br>
+                                    <p class="wow fadeInUp" data-wow-delay="1.8s">This application was developed for my research in my final year of my Computer Science Degree. It is a desktop application i created using Java only. It is intended to be used by users who want to get better understanding of various datastructures and sorting algorithms, the software shows how various datastructures and Algorithms work. Users use this program to experiment with various datastructure such as BST trees, Red-Black Trees etc, aswell as sorting algorithms such as Insertion sort, Selection sort etc. I love this project because it tested my programming skills and it was a project i invested alot of time in.<br></p>
+                              </div>
+                              
+                                <!--Creating the image gallery transition thing -->
+                                          <div class = "carousel-container">
+    	                                      
+     	                                      <div class = "carousel-slide">
+     	                                          <img src = "Images 4 transition Gallery/RedBlackTrees.png" alt ="" id = "lastClone">
+     		                                      <img src = "Images 4 transition Gallery/HomePage.png" alt = "Home page">
+     		                                      <img src = "Images 4 transition Gallery/AVLPic.png" alt = "Home page">
+     		                                      <img src = "Images 4 transition Gallery/RedBlackTrees.png" alt = "Home page">
+     		                                      <img src = "Images 4 transition Gallery/HomePage.png" alt = "" id = "firstClone">
+     	                                      </div>
+     	
+                                          </div>
+     
+                                          <button id = "prevBtn"><img src="Images 4 transition Gallery/leftArrow.png"></buton>
+                                          <button id = "nextBtn"><img src="Images 4 transition Gallery/rightArrow.png"></button>
+                                        
+                                          
+                                            <!--Javascript file for image gallery stuff -->  
+								  <script> 
+								  const carouselSlide = document.querySelector('.carousel-slide');
+									  
+									  const carouselImages = document.querySelectorAll('.carousel-slide img');
+									  
+									  //Buttons
+									  
+									  const prevBtn = document.querySelector('#prevBtn');
+									  
+									  const nextBtn = document.querySelector('#nextBtn');
+									  
+									  //Counter
+									  let counter = 1;
+									  const size = carouselImages[0].clientWidth;
+									  
+									  carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+									  
+									  //Adding button listeners
+									  nextBtn.addEventListener('click', ()=> {
+										 if(counter >= carouselImages.length -1) return;
+										
+										  carouselSlide.style.transition = "transform 0.8s ease-in-out";
+										  counter ++;
+										 carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+									  })
+									  
+									  
+									  prevBtn.addEventListener('click', ()=> {
+										  if (counter <= 0) return;
+										  
+										  carouselSlide.style.transition = "transform 0.8s ease-in-out";
+										  counter --;
+										 carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+									  });
+									  
+									  carouselSlide.addEventListener('transitionend', ()=> {
+										 if(carouselImages[counter].id === "lastClone"){
+											 carouselSlide.style.transition = "none";
+											 counter = carouselImages.length -2; 
+											 carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+											 
+										 } 
+										  if(carouselImages[counter].id === "firstClone"){
+											 carouselSlide.style.transition = "none";
+											 counter = carouselImages.length - counter;
+											 carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+											 
+										 } 
+									  });
+								  </script>
+                              <br> <br> <br>
+                             
+                              <!--Tutoring website here -->
+                                 <div class="col-lg-12">
+                                    <br>
+
+                                    <h2 class="wow fadeInUp" data-wow-delay="1s">Project 2: iAmVoting Website</h2><br><br>
+
+                                    <div class="row">
+                                          <div class="col-lg-4">
+                                                <p class="wow fadeInUp" data-wow-delay="1.2s">Type :</p>
+                                                <h6 class="wow fadeInUp" data-wow-delay="1.3s">Website</h6>
+                                          </div>
+
+                                          <div class="col-lg-4">
+                                                <p class="wow fadeInUp" data-wow-delay="1.4s">started :</p>
+                                                <h6 class="wow fadeInUp" data-wow-delay="1.5s">1 May 2019</h6>
+                                          </div>
+
+                                          <div class="col-lg-4">
+                                                <p class="wow fadeInUp" data-wow-delay="1.6s">completed :</p>
+                                                <h6 class="wow fadeInUp" data-wow-delay="1.7s">15 July 2019</h6>
+                                          </div>
+                                    </div>
+                                    <br>
+                                    <p class="wow fadeInUp" data-wow-delay="1.8s">This is a website i developed for iAmVoting which is a non-profit organisation to raise awareness and educate the Namibian people to vote. I developed this website using HTML, CSS, Javascript for the user interface and I used Bootstrap to make the website responsive. I love this website because i played a part in raising awareness for people to vote and also because it was the first website i got paid to develop and the client really loved it. To view the website please go to www.iamvotingnam.com.</p>
+                              </div>
+                              <br><br> <br>
+
+                               <!--Weather app stuff are here -->
+                               <div class="col-lg-12">
+                                    <br>
+
+                                    <h2 class="wow fadeInUp" data-wow-delay="1s">3.A rude voice recognition weather app</h2><br><br>
+
+                                    <div class="row">
+                                          <div class="col-lg-4">
+                                                <p class="wow fadeInUp" data-wow-delay="1.2s">Type :</p>
+                                                <h6 class="wow fadeInUp" data-wow-delay="1.3s">Web Application</h6>
+                                          </div>
+
+                                          <div class="col-lg-4">
+                                                <p class="wow fadeInUp" data-wow-delay="1.4s">started :</p>
+                                                <h6 class="wow fadeInUp" data-wow-delay="1.5s">1 June 2019</h6>
+                                          </div>
+
+                                          <div class="col-lg-4">
+                                                <p class="wow fadeInUp" data-wow-delay="1.6s">completed :</p>
+                                                <h6 class="wow fadeInUp" data-wow-delay="1.7s">10 June 2019</h6>
+                                          </div>
+                                    </div>
+                                    <br>
+                                    <p class="wow fadeInUp" data-wow-delay="1.8s">This is a web application i created using HTML,CSS, javascript and a weather API provided by google. It is a weather web application that displays the current weather and location of the user. The user can also click on the "speak" button which uses voice synthesizer voice technology to respond to the voice commands of the user. I made it to respond rudely to the user's statement just to make it a little bit more interesting :p</p>
+                              </div>
+                              
+                              
+                        </div>
+                  </div>
+            </div>
+            <!--------------- hero section ends here --------------->
+
+
+   <!---------- project image section ends here --------------->
+
+
+            <!--------------- footer starts here --------------->
+            <div class="footer">
+                  <div class="container">
+                        <br><br>
+
+                        <div class="collab">
+                              <div class="row">
+                                    <div class="col-lg-12">
+                                          <p class="wow fadeInUp">Got an interesting project? I can help you.</p>
+                                    </div>
+                              </div>
+                        </div>
+
+
+
+                        <div class="info">
+                              <div class="row">
+                                    <div class="col-lg-4" id="personal">
+                                          <p class="wow fadeInUp">connect with me</p>
+                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">ig @brooks_shitaa</h4>
+                                          <br><br>
+                                    </div>
+
+                                    <div class="col-lg-4" id="media">
+                                          <p class="wow fadeInUp" data-wow-delay="0s">follow me</p>
+
+                                          <ul>
+                                                <li id="fb" class="wow fadeInUp" data-wow-delay="0.4s">fb</li>
+                                                <li id="ig" class="wow fadeInUp" data-wow-delay="0.6s">ig</li>
+                                                <li id="tw" class="wow fadeInUp" data-wow-delay="0.8s">tw</li>
+                                                <li id="yt" class="wow fadeInUp" data-wow-delay="1s">yt</li>
+                                          </ul>
+
+                                          <br><br>
+                                    </div>
+
+                                    <div class="col-lg-4" id="address">
+                                          <p class="wow fadeInUp" data-wow-delay="0s">say hello</p>
+                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">brookss736@gmail.com</h4>
+                                          <br><br>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <!--------------- footer ends here --------------->
+
+            <br><br><br><br>
+
+      </div>
+
+      <!-- greensock cdn -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+      <script type="text/javascript">
+
+      // navigation starts here
+      $("#toggle").click(function() {
+            $(this).toggleClass('on');
+            $("#resize").toggleClass("active");
+      });
+
+      $("#resize ul li a").click(function() {
+            $(this).toggleClass('on');
+            $("#resize").toggleClass("active");
+      });
+
+      $(".close-btn").click(function() {
+            $(this).toggleClass('on');
+            $("#resize").toggleClass("active");
+      });
+
+      // navigation ends here
+
+      // nav animation
+
+      TweenMax.from("#brand", 1, {
+            delay: 0.4,
+            y: 10,
+            opacity: 0,
+            ease: Expo.easeInOut
+      })
+
+      TweenMax.staggerFrom("#menu li a", 1, {
+            delay: 0.4,
+            opacity: 0,
+            ease: Expo.easeInOut
+      }, 0.1);
+
+      // nav animation ends
+
+
+
+      new WOW().init();
+
+
+      </script>
+</body>
+</html>
